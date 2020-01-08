@@ -11,9 +11,9 @@ from aip import AipOcr
 image = ImageGrab.grabclipboard() 
 image.save("screen.png")
 
-APP_ID = '18222442'
-API_KEY = '9uSHxrDZBybrBPiGtnOL0If7'
-SECRET_KEY = 'z4H7iA6k6TmFtCjsWUebg9mqmtV5Po9j'
+APP_ID = ''
+API_KEY = ''
+SECRET_KEY = ''
 
 client = AipOcr(APP_ID, API_KEY, SECRET_KEY)
 
