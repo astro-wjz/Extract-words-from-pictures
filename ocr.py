@@ -11,9 +11,9 @@ from aip import AipOcr
 image = ImageGrab.grabclipboard() 
 image.save("screen.png")
 
-APP_ID = '18222442'
-API_KEY = '9uSHxrDZBybrBPiGtnOL0If7'
-SECRET_KEY = 'z4H7iA6k6TmFtCjsWUebg9mqmtV5Po9j'
+APP_ID = ''
+API_KEY = ''
+SECRET_KEY = ''
 
 client = AipOcr(APP_ID, API_KEY, SECRET_KEY)
 
@@ -22,13 +22,13 @@ with open("screen.png", 'rb') as f:
     file = open("temp.txt", 'w+')
     image = f.read()
     # 调用百度API通用文字识别（高精度版），提取图片中的内容
-    # text = client.basicGeneral(image)
-    text = client.basicAccurate(image)
+    # text = client.basicGeneral(image) # 粗略识别
+    text = client.basicAccurate(image) #精确识别
     result = text["words_result"]
     for i in result:
         #print(i["words"])
-        #file.write(i["words"] + '\n')
-        file.write(i["words"])
+        #file.write(i["words"] + '\n') #换行
+        file.write(i["words"])         #不换行
     file.close()
     file = open("temp.txt", 'r')
     contents = file.read()
