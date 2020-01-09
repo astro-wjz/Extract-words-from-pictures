@@ -22,7 +22,7 @@ pip3 install package-name
 ```
 或
 ```
-pip3 install package-name
+pip install package-name
 ```
 package-name包括 ```pillow```, ```baidu-aip``` 和 ```pyperclip```
 
