@@ -19,8 +19,8 @@ client = AipOcr(APP_ID, API_KEY, SECRET_KEY)
 print('----------------------------------------')
 
 with open("capture.png", 'rb') as f:        # 若图片已存在，请填写文件实际路径
-                                            # 例如 with open("capture.png", 'rb') as f:
-    file = open("temp.txt", 'w+')
+                                            # 例如 with open(r"C:\Users\name\Desktop\jietu.png", 'rb') as f:
+    file = open("temp.txt", 'w+', encoding='utf-8')
     image = f.read()
     # 调用百度API通用文字识别（高精度版），提取图片中的内容
     # text = client.basicGeneral(image)     # 粗略识别
@@ -31,7 +31,7 @@ with open("capture.png", 'rb') as f:        # 若图片已存在，请填写文�
         #file.write(i["words"] + '\n')      # 换行
         file.write(i["words"])              # 不换行
     file.close()
-    file = open("temp.txt", 'r')
+    file = open("temp.txt", 'r', encoding='utf-8')
     contents = file.read()
     print(contents)                         # 输出结果，并保存在文件 temp.txt 中
     pyperclip.copy(contents)                # 同时将结果存放在剪贴板中
